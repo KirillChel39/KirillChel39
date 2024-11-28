@@ -1,0 +1,179 @@
+//***условия:
+
+//if
+const x = 2
+// if (x<5) {
+//     console.log('x меньше 5')}
+//else {console.log('x ,jdwhs 5')}
+//else if
+//else if () {console.log('x ,jdwhs 5')}
+// console.log(x>5 ? 'Hello': 'World')
+
+// const fruit = '234';
+// switch (fruit) {
+//     case 'apple':
+//     console.log('это яблоко');
+//     break
+//     case 'banana':
+//     console.log('это банан');
+//     break;
+//     default:
+//         console.log('неизвестный фрукт');
+//             }
+
+//****циклы */
+
+// for (const a = 5; a < 10; a+1) {
+//     console.log(a);
+// }
+
+// let i = 0;
+
+// while (i<5) {
+//     console.log('итерация:', i)
+// }
+
+// const xNumber = 5;
+// const xNumberZero = 0;
+// const yString = 'строка'
+// const zEmptyString = ''
+// if (!!xNumber) {
+//     console.log('консоль');
+//     else ()
+    
+// }
+
+// do; делает потом
+//     while проверяет
+
+// while проверяет, потом делает
+
+
+
+
+// const example = 'привет мир';
+
+// for (const char of example){
+//     console.log(char);
+// }
+// п
+// р
+// и
+// в
+// е
+// т
+ 
+// м
+// и
+// р
+
+//++ шаг1
+
+// const example = 'привет мир';
+
+// for (const char of example){
+//     console.log(char);
+// }
+// for (let i = 0; i < example.length; i++) {
+//     console.log(example[i]);
+// }
+
+// for (let i = 1; i < 101; i++) {
+//     if (i % 2 !== 0) {
+//         console.log(i)
+//     }
+// } // нечетные от 0 дл 100
+
+
+// Используется всегда строгое равенство ===
+
+// != - не равно
+
+//   ++ - инкремент / увеличивает значение на 1
+//   -- - декремент / уменьшает значение на 1
+
+
+// for (let i = 1; i < 101; i++) {
+//     if (i % 3 !=== 0) {
+//         console.log(i)
+//     }
+//     }
+
+
+// логические операторы
+// && - оператор И
+// || - ИЛИ
+console.log('#1 Напишите функцию, которая принимает строку и проверяет, состоит ли она только из цифр.')
+    function onlyDigits(str) {
+        const regex = /^\d+$/;
+//Регулярное выражение /^\d+$/ означает следующее:
+// ^ — начало строки,
+// \d+ — одна или более цифр,
+// $ — конец строки.
+return regex.test(str);
+    }
+    
+    console.log(onlyDigits('123'));   // true
+    console.log(onlyDigits('12a3'));  // false
+    console.log(onlyDigits('abc'));   // false
+    console.log('')
+    console.log('#2 Напишите функцию, которая принимает строку и возвращает количество букв')
+    
+    function countLetters(str) {
+        const letters = /[a-zA-Zа-яА-Я]/g;
+        const matches = str.match(letters);
+        return matches ? matches.length : 0;
+    }
+    console.log(countLetters('Hello, World!'));       // 10
+    console.log(countLetters('Привет, Мир!'));        // 9
+    console.log(countLetters('123'));                 // 0
+    console.log(countLetters('Набор из букв и 3-х 123 цифр'));    // 17
+    console.log('')
+    console.log('#3 Напишите функцию, которая принимает строку и возвращает количество гласных букв')
+
+    function countVovels(str) {
+        const vovels = /[aeiouyёиыэюя]/gi;
+        const matches = str.match(vovels);
+        return matches ? matches.length : 0;
+    }
+    console.log(countVovels('Hello, World!'));       // 3
+    console.log(countVovels('Привет, Мир!'));        // 3
+    console.log(countVovels('123'));                 // 0
+    console.log(countVovels('Набор из букв и 3-х 123 цифр'));    // 6
+    console.log('');
+    console.log('#4 Напишите функцию, которая принимает год и определяет, является ли он високосным.');
+    function leapYear(year) {
+    // Условие для определения високосного года
+    return (year % 400 === 0) || ((year % 100 !== 0) && (year % 4 === 0));
+}
+console.log(leapYear(new Date().getFullYear())); // true
+    console.log(leapYear(2025)); // false
+    console.log(leapYear(1893)); // false
+    console.log(leapYear(1980)); // true
+    console.log('');
+    console.log('#5 Напишите функцию, которая принимает двузначное число и возвращает разницу между его цифрами.');
+function differenceBetweenDigits(num) {
+    let firstDigit = Math.floor(num / 10);  // Первая цифра (деление на 10 и округления вниз)
+    let secondDigit = num % 10;             // Вторая цифра (остаток от деления на 10)
+
+    // Находим разницу между ними
+    return firstDigit - secondDigit;
+}
+console.log(differenceBetweenDigits(45));  // -1
+console.log(differenceBetweenDigits(99));  // 0
+console.log(differenceBetweenDigits(72));  // 5
+console.log('');
+console.log('#6 Напишите функцию, которая принимает число и проверяет, является ли оно зеркальным');
+
+function mirrorNumber(num) {
+    
+    let reversedNum = String(num).split('').reverse().join(''); // Преобразует число в строку и переворачивает её
+    
+        return num == reversedNum; // сравнить 2 числа
+}
+
+// Примеры использования
+console.log(mirrorNumber(121));      // true
+console.log(mirrorNumber(123));      // false
+console.log(mirrorNumber(1312131));  // true
+console.log(mirrorNumber(-121));     // false (знак минус делает число несимметричным)
